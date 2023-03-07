@@ -29,52 +29,16 @@ let activePlayer = "player1";
 
 player1ContainerBackground.classList.add("active-player");
 
-function handleRollTheDiceButtonClicked() {
-  handleTheDiceRoll();
-  handlePlayersCurrentScore();
-}
-
-function handleHoldButtonClicked() {
-  handlePlayersScore();
-  handleSwitchingPlayers();
-}
-
 function handleRestartButtonClicked() {
+  activePlayer = "player1";
+  dice = 0;
+  currentScore = 0;
   player1Score.value = 0;
   currentScore1.value = 0;
   player2Score.value = 0;
   currentScore2.value = 0;
   diceImg.classList.add("hidden");
-}
-
-function handleTheDiceRoll() {
-  dice = Math.floor(Math.random() * 6) + 1;
-  diceImg.classList.remove("hidden");
-  diceImg.src = `./dice-faces/dice-${dice}.png`;
-  if (dice === 1) {
-    handleSwitchingPlayers();
-  }
-}
-
-function handlePlayersCurrentScore() {
-  currentScore += dice;
-  currentScore1.value = currentScore;
-}
-
-function handlePlayersScore() {
-  player1Score.value = currentScore1.value;
-  currentScore1.value = 0;
-  currentScore = 0;
-}
-
-function handleSwitchingPlayers() {
-  if (activePlayer === "player1") {
-    activePlayer = "player2";
-    handleActivePlayerStyles("player2");
-  } else {
-    activePlayer = "player1";
-    handleActivePlayerStyles("player1");
-  }
+  handleActivePlayerStyles("player1");
 }
 
 function handleActivePlayerStyles(activePlayer) {
@@ -86,6 +50,61 @@ function handleActivePlayerStyles(activePlayer) {
     player2ContainerBackground.classList.add("active-player");
   }
 }
+
+function handleRollTheDiceButtonClicked() {
+  rollDice();
+  if (dice === 1) {
+    switchPlayer();
+    resetCurrentScores();
+  } else {
+    updateCurrentScore();
+  }
+}
+
+function rollDice() {
+  dice = Math.floor(Math.random() * 6) + 1;
+  diceImg.classList.remove("hidden");
+  diceImg.src = `./dice-faces/dice-${dice}.png`;
+}
+
+function switchPlayer() {
+  if (activePlayer === "player1") {
+    activePlayer = "player2";
+    handleActivePlayerStyles("player2");
+  } else {
+    activePlayer = "player1";
+    handleActivePlayerStyles("player1");
+  }
+}
+
+function updateActivePlayerScore() {
+  if (activePlayer === "player1") {
+    player1Score.value += currentScore1.value;
+  } else {
+    player2Score.value += currentScore2.value;
+  }
+}
+
+function handleHoldButtonClicked() {
+  updateActivePlayerScore();
+  switchPlayer();
+}
+
+function updateCurrentScore() {
+  if (activePlayer === "player1") {
+    currentScore += dice;
+    currentScore1.value = currentScore;
+  } else {
+    currentScore += dice;
+    currentScore2.value = currentScore;
+  }
+}
+
+function resetCurrentScores() {
+  currentScore = 0;
+  currentScore1.value = 0;
+  currentScore2.value = 0;
+}
+
 //when player1 is active player1's score is active, player1's current score is active, visually
-// player1 has 70% opacity set on its css
 // active-player and inactive-player classes
