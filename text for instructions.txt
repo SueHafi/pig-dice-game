@@ -1,0 +1,29 @@
+player scores: hold total score
+current score: only shows addition of current scores
+you can hold without rolling any dice 
+pressing hold adds on current score to existing player score
+once you reach 100 points you win
+I wanna set a "win screen" maybe with small piggies in background and a crowned pig emoji
+once you have won you can not change 
+I also want to set an instructions modal on the page where the game instructions pop up and are readable 
+In future maybe I could add a tally of who won how many games 
+dice image for rolling a number 1 die can be red with black dots or something so you know you rolled a different die 
+
+make current player styles and find a way to discover current player. Always start with player 1.
+
+handle roll dice - display dice number, handle each dice number being added correctly to current score
+
+handle rolling a 1 -  when you roll a 1 you lose your current score (gets set to 0) and it switches to other player
+pressing hold - adds current score to player score and switches player and sets current score to 0
+handle win condition - player score reaches 100 - player wins, buttons "roll dice" "hold" don't work anymore, only new game button works, produce a win screen, get rid of dice image
+new game - sets player scores and current scores to 0, dice disappears, set player 1 as starting player
+
+
+ids for elements:
+player-score--1
+current-score--1
+player-score--2
+current-score--2
+button--restart
+button--roll
+button--hold

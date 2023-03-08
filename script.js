@@ -76,18 +76,22 @@ function switchPlayer() {
     handleActivePlayerStyles("player1");
   }
 }
+updateActivePlayerScore();
 
 function updateActivePlayerScore() {
   if (activePlayer === "player1") {
-    player1Score.value += currentScore1.value;
+    player1Score.value =
+      Number(player1Score.value) + Number(currentScore1.value);
   } else {
-    player2Score.value += currentScore2.value;
+    player2Score.value =
+      Number(player2Score.value) + Number(currentScore2.value);
   }
 }
 
 function handleHoldButtonClicked() {
   updateActivePlayerScore();
   switchPlayer();
+  resetCurrentScores();
 }
 
 function updateCurrentScore() {
@@ -106,5 +110,9 @@ function resetCurrentScores() {
   currentScore2.value = 0;
 }
 
-//when player1 is active player1's score is active, player1's current score is active, visually
-// active-player and inactive-player classes
+// handle win condition
+// if (player1Score.value === "5") {
+//   console.log(`Congradulations Player one you have won!!`);
+// } else if (player2Score.value === 100) {
+//   console.log(`Congradulations Player two you have won!!`);
+// }
