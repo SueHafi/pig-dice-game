@@ -1,6 +1,10 @@
 /* 768 screen sizes and up */
 
 @media (min-width: 48em) {
+  footer {
+    font-size: 1.6rem;
+  }
+
   .header {
     font-size: 9.6rem;
   }
@@ -64,4 +68,4 @@
   .winner-crown {
     font-size: 4.8rem;
   }
-} ;
+}
