@@ -61,10 +61,6 @@ body {
   box-shadow: 0rem 0rem 3rem rgba(131, 58, 180, 50%);
 }
 
-.hidden {
-  display: none;
-}
-
 .player-container-style {
   background-color: rgb(254, 254, 254);
   padding: 20px 40px 100px 40px;
@@ -97,7 +93,6 @@ body {
 }
 
 .section-header {
-  margin-top: 40px;
   text-align: center;
 }
 
@@ -182,4 +177,22 @@ body {
   width: 32px;
   stroke: black;
   border: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.button[disabled] {
+  background-color: rgba(128, 128, 128, 50%);
+  cursor: initial;
+}
+
+.winner-crown {
+  text-align: center;
+  font-size: 4.8rem;
+}
+
+.winner-crown--invisible {
+  visibility: hidden;
 }

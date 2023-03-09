@@ -5,19 +5,20 @@ const currentScore2 = document.querySelector('[data-id="current-score--2"]');
 const restartButton = document.querySelector('[data-id="button--restart"]');
 const rollButton = document.querySelector('[data-id="button--roll"]');
 const holdButton = document.querySelector('[data-id="button--hold"]');
-const diceImg = document.querySelector(".dice");
+const diceImg = document.querySelector('[data-id="dice"]');
 const player1ContainerBackground = document.querySelector(
   ".player-1-container"
 );
 const player2ContainerBackground = document.querySelector(
   ".player-2-container"
 );
+const player1Crown = document.querySelector('[data-id="winner-crown--1"]');
+const player2Crown = document.querySelector('[data-id="winner-crown--2"]');
 
 player1Score.value = 0;
 player2Score.value = 0;
 currentScore1.value = 0;
 currentScore2.value = 0;
-diceImg.classList.add("hidden");
 
 rollButton.addEventListener("click", handleRollTheDiceButtonClicked);
 holdButton.addEventListener("click", handleHoldButtonClicked);
@@ -39,6 +40,10 @@ function handleRestartButtonClicked() {
   currentScore2.value = 0;
   diceImg.classList.add("hidden");
   handleActivePlayerStyles("player1");
+  holdButton.removeAttribute("disabled", true);
+  rollButton.removeAttribute("disabled", true);
+  player1Crown.classList.add("winner-crown--invisible");
+  player2Crown.classList.add("winner-crown--invisible");
 }
 
 function handleActivePlayerStyles(activePlayer) {
@@ -76,7 +81,6 @@ function switchPlayer() {
     handleActivePlayerStyles("player1");
   }
 }
-updateActivePlayerScore();
 
 function updateActivePlayerScore() {
   if (activePlayer === "player1") {
@@ -90,6 +94,7 @@ function updateActivePlayerScore() {
 
 function handleHoldButtonClicked() {
   updateActivePlayerScore();
+  checkIfPlayerHasWon();
   switchPlayer();
   resetCurrentScores();
 }
@@ -110,9 +115,20 @@ function resetCurrentScores() {
   currentScore2.value = 0;
 }
 
-// handle win condition
-// if (player1Score.value === "5") {
-//   console.log(`Congradulations Player one you have won!!`);
-// } else if (player2Score.value === 100) {
-//   console.log(`Congradulations Player two you have won!!`);
-// }
+function checkIfPlayerHasWon() {
+  if (player1Score.value >= 10) {
+    console.log(`Congradulations Player one you have won!!`);
+    player1Crown.classList.remove("winner-crown--invisible");
+    setEndGameStyles();
+  } else if (player2Score.value >= 10) {
+    console.log(`Congradulations Player two you have won!!`);
+    player2Crown.classList.remove("winner-crown--invisible");
+    setEndGameStyles();
+  }
+}
+
+function setEndGameStyles() {
+  holdButton.setAttribute("disabled", true);
+  rollButton.setAttribute("disabled", true);
+  diceImg.classList.add("hidden");
+}

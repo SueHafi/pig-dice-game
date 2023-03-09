@@ -20,7 +20,7 @@
         <h1 class="header">The pig dice game</h1>
       </header>
       <div class="container">
-        <img class="dice" src="./dice-faces/dice-1.png" />
+        <img class="dice hidden" data-id="dice" src="./dice-faces/dice-1.png" />
         <!-- <img class="dice" src="./dice-faces/dice-2.png" />
         <img class="dice" src="./dice-faces/dice-3.png" />
         <img class="dice" src="./dice-faces/dice-4.png" />
@@ -30,7 +30,13 @@
           class="player-section player-1-container player-container-style"
         >
           <header class="section-header">
-            <h1 class="player-title">Player One</h1>
+            <div
+              class="winner-crown winner-crown--invisible"
+              data-id="winner-crown--1"
+            >
+              👑
+            </div>
+            <h1 class="player-title player-title--1">Player One</h1>
             <output
               class="player-score player-score--style"
               data-id="player-score--1"
@@ -52,7 +58,13 @@
           class="player-section player-2-container player-container-style"
         >
           <header class="section-header">
-            <h1 class="player-title">Player Two</h1>
+            <div
+              class="winner-crown winner-crown--invisible"
+              data-id="winner-crown--2"
+            >
+              👑
+            </div>
+            <h1 class="player-title player-title--2">Player Two</h1>
             <output
               class="player-score player-score--style"
               data-id="player-score--2"
