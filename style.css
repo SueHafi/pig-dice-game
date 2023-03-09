@@ -33,7 +33,7 @@ body {
 .header {
   text-align: center;
   text-transform: uppercase;
-  font-size: 9.6rem;
+  font-size: 4.8rem;
   margin-top: 60px;
   background: #121fcf;
   background: linear-gradient(to left, #121fcf 0%, #cf1512 100%);
@@ -44,26 +44,31 @@ body {
   margin-bottom: 30px;
 }
 
-.container {
+.outer-container {
+  padding-right: 10px;
+  padding-left: 10px;
+  min-height: 30vh;
+}
+.inner-container {
   display: flex;
   justify-content: center;
   align-content: center;
-  min-height: 30vh;
+
   position: relative;
   box-shadow: 0 30px 100px rgba(0, 0, 0, 40%);
 }
 
 .dice {
   position: absolute;
-  height: 120px;
+  height: 60px;
   z-index: 1;
-  top: 14rem;
+  top: 10rem;
   box-shadow: 0rem 0rem 3rem rgba(131, 58, 180, 50%);
 }
 
 .player-container-style {
   background-color: rgb(254, 254, 254);
-  padding: 20px 40px 100px 40px;
+  padding: 20px;
   border-radius: 8px;
 }
 
@@ -99,13 +104,13 @@ body {
 .player-title {
   text-transform: uppercase;
   text-align: center;
-  font-size: 4.8rem;
+  font-size: 2.4rem;
   margin-bottom: 20px;
 }
 
 .player-score--style {
   text-align: center;
-  font-size: 8rem;
+  font-size: 4rem;
 }
 
 .current-score-container {
@@ -115,7 +120,7 @@ body {
 }
 
 .current-score-box {
-  height: 90px;
+  height: 70px;
   max-width: 200px;
   padding: 5px 10px 0 10px;
   background-color: none;
@@ -127,28 +132,27 @@ body {
 .current-score-title {
   text-align: center;
   text-transform: uppercase;
-  margin-bottom: 10px;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 
 .current-score--style {
   text-align: center;
-  font-size: 3.6rem;
+  font-size: 1.8rem;
 }
 
 .button {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   background-color: rgba(241, 8, 83, 70%);
   color: white;
   border: none;
   border-radius: 100px;
-  padding: 10px 20px;
+  padding: 5px 10px;
   font-family: "Roboto Mono", monospace;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 5px;
 }
 
 .button:hover,
@@ -159,22 +163,22 @@ body {
 
 .button--restart {
   position: absolute;
-  top: 40px;
+  top: 10px;
 }
 
 .button--roll {
   position: absolute;
-  bottom: 150px;
+  bottom: 140px;
 }
 
 .button--hold {
   position: absolute;
-  bottom: 70px;
+  bottom: 95px;
 }
 
 .icon {
-  height: 32px;
-  width: 32px;
+  height: 24px;
+  width: 24px;
   stroke: black;
   border: none;
 }
@@ -190,7 +194,7 @@ body {
 
 .winner-crown {
   text-align: center;
-  font-size: 4.8rem;
+  font-size: 2.4rem;
 }
 
 .winner-crown--invisible {

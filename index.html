@@ -11,6 +11,7 @@
       rel="stylesheet"
     />
     <link href="style.css" rel="stylesheet" />
+    <link href="queries.css" rel="stylesheet" />
     <script src="script.js" defer></script>
     <title>Pig Dice Game</title>
   </head>
@@ -19,160 +20,166 @@
       <header>
         <h1 class="header">The pig dice game</h1>
       </header>
-      <div class="container">
-        <img class="dice hidden" data-id="dice" src="./dice-faces/dice-1.png" />
-        <!-- <img class="dice" src="./dice-faces/dice-2.png" />
+      <div class="outer-container">
+        <div class="inner-container">
+          <img
+            class="dice hidden"
+            data-id="dice"
+            src="./dice-faces/dice-1.png"
+          />
+          <!-- <img class="dice" src="./dice-faces/dice-2.png" />
         <img class="dice" src="./dice-faces/dice-3.png" />
         <img class="dice" src="./dice-faces/dice-4.png" />
         <img class="dice" src="./dice-faces/dice-5.png" />
         <img class="dice" src="./dice-faces/dice-6.png" /> -->
-        <section
-          class="player-section player-1-container player-container-style"
-        >
-          <header class="section-header">
-            <div
-              class="winner-crown winner-crown--invisible"
-              data-id="winner-crown--1"
-            >
-              👑
-            </div>
-            <h1 class="player-title player-title--1">Player One</h1>
-            <output
-              class="player-score player-score--style"
-              data-id="player-score--1"
-              >0</output
-            >
-          </header>
-          <div class="current-score-container">
-            <div class="current-score-box">
-              <h3 class="current-score-title">Current Score:</h3>
+          <section
+            class="player-section player-1-container player-container-style"
+          >
+            <header class="section-header">
+              <div
+                class="winner-crown winner-crown--invisible"
+                data-id="winner-crown--1"
+              >
+                👑
+              </div>
+              <h1 class="player-title player-title--1">Player One</h1>
               <output
-                class="current-score current-score--style"
-                data-id="current-score--1"
+                class="player-score player-score--style"
+                data-id="player-score--1"
                 >0</output
               >
+            </header>
+            <div class="current-score-container">
+              <div class="current-score-box">
+                <h3 class="current-score-title">Current Score:</h3>
+                <output
+                  class="current-score current-score--style"
+                  data-id="current-score--1"
+                  >0</output
+                >
+              </div>
             </div>
-          </div>
-        </section>
-        <section
-          class="player-section player-2-container player-container-style"
-        >
-          <header class="section-header">
-            <div
-              class="winner-crown winner-crown--invisible"
-              data-id="winner-crown--2"
-            >
-              👑
-            </div>
-            <h1 class="player-title player-title--2">Player Two</h1>
-            <output
-              class="player-score player-score--style"
-              data-id="player-score--2"
-              >0</output
-            >
-          </header>
-          <div class="current-score-container">
-            <div class="current-score-box">
-              <h3 class="current-score-title">Current Score:</h3>
+          </section>
+          <section
+            class="player-section player-2-container player-container-style"
+          >
+            <header class="section-header">
+              <div
+                class="winner-crown winner-crown--invisible"
+                data-id="winner-crown--2"
+              >
+                👑
+              </div>
+              <h1 class="player-title player-title--2">Player Two</h1>
               <output
-                class="current-score current-score--style"
-                data-id="current-score--2"
+                class="player-score player-score--style"
+                data-id="player-score--2"
                 >0</output
               >
+            </header>
+            <div class="current-score-container">
+              <div class="current-score-box">
+                <h3 class="current-score-title">Current Score:</h3>
+                <output
+                  class="current-score current-score--style"
+                  data-id="current-score--2"
+                  >0</output
+                >
+              </div>
             </div>
-          </div>
-        </section>
-        <button class="button button--restart" data-id="button--restart">
-          <svg
-            class="icon icon--restart"
-            xmlns="http://www.w3.org/2000/svg"
-            width="192"
-            height="192"
-            viewBox="0 0 256 256"
-          >
-            <!-- <rect width="256" height="256" fill="none"></rect> -->
-            <polyline
-              points="79.8 99.7 31.8 99.7 31.8 51.7"
-              fill="none"
-              stroke="#000000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            ></polyline>
-            <path
-              d="M65.8,190.2a88,88,0,1,0,0-124.4l-34,33.9"
-              fill="none"
-              stroke="#000000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            ></path>
-          </svg>
-          <p>Restart</p>
-        </button>
-        <button class="button button--roll" data-id="button--roll">
-          <svg
-            class="icon icon--dice"
-            xmlns="http://www.w3.org/2000/svg"
-            width="192"
-            height="192"
-            fill="#000000"
-            viewBox="0 0 256 256"
-          >
-            <!-- <rect width="256" height="256" fill="none"></rect> -->
-            <rect
-              x="40"
-              y="40"
-              width="176"
-              height="176"
-              rx="24"
-              fill="none"
-              stroke="#000000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            ></rect>
-            <circle cx="128" cy="128" r="12"></circle>
-          </svg>
-          <p>Roll the dice</p>
-        </button>
-        <button class="button button--hold" data-id="button--hold">
-          <svg
-            class="icon icon--hold"
-            xmlns="http://www.w3.org/2000/svg"
-            width="192"
-            height="192"
-            fill="#000000"
-            viewBox="0 0 256 256"
-          >
-            <!-- <rect width="256" height="256" fill="none"></rect> -->
-            <path
-              d="M128,52a20,20,0,0,1,40,0v60"
-              fill="none"
-              stroke="#000000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            ></path>
-            <path
-              d="M88,68V36a20,20,0,0,1,40,0v68"
-              fill="none"
-              stroke="#000000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            ></path>
-            <path
-              d="M128,172a40,40,0,0,1,40-40V112a20,20,0,0,1,40,0v40a80,80,0,0,1-160,0V68a20,20,0,0,1,40,0v44"
-              fill="none"
-              stroke="#000000"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="16"
-            ></path>
-          </svg>
-          <p>Hold</p>
-        </button>
+          </section>
+          <button class="button button--restart" data-id="button--restart">
+            <svg
+              class="icon icon--restart"
+              xmlns="http://www.w3.org/2000/svg"
+              width="192"
+              height="192"
+              viewBox="0 0 256 256"
+            >
+              <!-- <rect width="256" height="256" fill="none"></rect> -->
+              <polyline
+                points="79.8 99.7 31.8 99.7 31.8 51.7"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              ></polyline>
+              <path
+                d="M65.8,190.2a88,88,0,1,0,0-124.4l-34,33.9"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              ></path>
+            </svg>
+            <p>Restart</p>
+          </button>
+          <button class="button button--roll" data-id="button--roll">
+            <svg
+              class="icon icon--dice"
+              xmlns="http://www.w3.org/2000/svg"
+              width="192"
+              height="192"
+              fill="#000000"
+              viewBox="0 0 256 256"
+            >
+              <!-- <rect width="256" height="256" fill="none"></rect> -->
+              <rect
+                x="40"
+                y="40"
+                width="176"
+                height="176"
+                rx="24"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              ></rect>
+              <circle cx="128" cy="128" r="12"></circle>
+            </svg>
+            <p>Roll the dice</p>
+          </button>
+          <button class="button button--hold" data-id="button--hold">
+            <svg
+              class="icon icon--hold"
+              xmlns="http://www.w3.org/2000/svg"
+              width="192"
+              height="192"
+              fill="#000000"
+              viewBox="0 0 256 256"
+            >
+              <!-- <rect width="256" height="256" fill="none"></rect> -->
+              <path
+                d="M128,52a20,20,0,0,1,40,0v60"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              ></path>
+              <path
+                d="M88,68V36a20,20,0,0,1,40,0v68"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              ></path>
+              <path
+                d="M128,172a40,40,0,0,1,40-40V112a20,20,0,0,1,40,0v40a80,80,0,0,1-160,0V68a20,20,0,0,1,40,0v44"
+                fill="none"
+                stroke="#000000"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="16"
+              ></path>
+            </svg>
+            <p>Hold</p>
+          </button>
+        </div>
       </div>
     </main>
   </body>

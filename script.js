@@ -94,8 +94,10 @@ function updateActivePlayerScore() {
 
 function handleHoldButtonClicked() {
   updateActivePlayerScore();
-  checkIfPlayerHasWon();
-  switchPlayer();
+  const hasAnyoneWon = checkIfPlayerHasWon();
+  if (!hasAnyoneWon) {
+    switchPlayer();
+  }
   resetCurrentScores();
 }
 
@@ -116,15 +118,18 @@ function resetCurrentScores() {
 }
 
 function checkIfPlayerHasWon() {
-  if (player1Score.value >= 10) {
+  if (player1Score.value >= 100) {
     console.log(`Congradulations Player one you have won!!`);
     player1Crown.classList.remove("winner-crown--invisible");
     setEndGameStyles();
-  } else if (player2Score.value >= 10) {
+    return true;
+  } else if (player2Score.value >= 100) {
     console.log(`Congradulations Player two you have won!!`);
     player2Crown.classList.remove("winner-crown--invisible");
     setEndGameStyles();
+    return true;
   }
+  return false;
 }
 
 function setEndGameStyles() {
