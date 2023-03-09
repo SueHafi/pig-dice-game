@@ -29,6 +29,17 @@ footer {
   margin-top: 20px;
 }
 
+a,
+a:link,
+a:visited {
+  color: white;
+}
+
+a:hover,
+a:active {
+  color: #f46f99;
+}
+
 .main-content {
   display: grid;
   grid-template-rows: 1fr auto 1fr;
