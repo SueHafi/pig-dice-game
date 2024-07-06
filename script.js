@@ -1,5 +1,7 @@
 const instructionsBtn = document.querySelector('[data-id="instructions-button"]');
 
+const instructionsContainer = document.querySelector('[data-id="instructions-box"]');
+
 const player1ScoreElement = document.querySelector(
   '[data-id="player-score--1"]'
 );
@@ -46,9 +48,11 @@ player1ContainerBackgroundElement.classList.add("active-player");
 let instructionsShowing = false;
 function handleInstructionsBtnClicked() {
   if(!instructionsShowing) {
-    instructionsBtn.textContent='Click me to close';
     instructionsShowing = true;
+    instructionsContainer.classList.remove('hidden');
+    instructionsBtn.textContent='Hide instructions';
   } else {
+    instructionsContainer.classList.add('hidden');
     instructionsBtn.textContent='How to play'
     instructionsShowing = false;
   }
