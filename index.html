@@ -11,15 +11,30 @@
       rel="stylesheet"
     />
     <link href="./style.css" rel="stylesheet" />
-    <link href="./queries.css" rel="stylesheet" />
     <script src="./script.js" defer></script>
     <title>Pig Dice Game</title>
   </head>
   <body>
     <main class="main-content">
-      <header>
-        <h1 class="header">The pig dice game</h1>
-      </header>
+      <div class="header-container">
+        <header>
+          <h1 class="header">The pig dice game</h1>
+        </header>
+        <button class="instructions-btn" data-id="instructions-button">
+          How to play
+        </button>
+        <div class="instructions-container">
+          <h3 class="instructions-title">How to play:</h3>
+          <p class="instructions-text">
+            In the pig dice game players take turns to roll a single dice as
+            many times as they wish. Adding all roll results to a running total.
+            The player will lose their gained score for the turn if they roll a
+            1 and it will switch to the other players turn. You can hold at any
+            point on your turn and it will bank your current score and add it to
+            your existing score. The first player to bank 100 points wins.
+          </p>
+        </div>
+      </div>
       <div class="outer-container">
         <div class="inner-container">
           <img

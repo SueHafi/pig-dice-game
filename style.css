@@ -20,6 +20,7 @@ body {
     rgba(252, 70, 107, 1) 100%
   );
   font-family: "Roboto Mono", monospace;
+  min-height: 100vh;
 }
 
 footer {
@@ -43,10 +44,17 @@ a:active {
 .main-content {
   display: grid;
   grid-template-rows: 1fr auto 1fr;
-  height: 100%;
+  min-height: 100vh;
   margin: auto;
   max-width: 100rem;
   padding-top: 40px;
+  padding-bottom: 40px;
+  position: relative;
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
@@ -57,10 +65,55 @@ a:active {
   background: #121fcf;
   background: linear-gradient(to left, #121fcf 0%, #cf1512 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 0.1px;
   -webkit-text-stroke-color: black;
   margin-bottom: 30px;
+}
+
+.instructions-btn {
+  display: block;
+  background-color: #da1e5a;
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black, 1px 1px 0 black,
+    1px 1px 0 black;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 2px 5px black;
+  margin-top: auto;
+  margin-left: auto;
+  margin-right: 20px;
+  margin-bottom: 10px;
+}
+
+.instructions-btn:hover {
+  background-color: #f73170;
+}
+
+.instructions-btn:active {
+  background-color: #da1e5a;
+}
+
+.instructions-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.instructions-title {
+  padding-bottom: 5px;
+  font-size: 1.6rem;
+}
+
+.instructions-text {
+  font-size: 1.5rem;
 }
 
 .outer-container {
@@ -72,7 +125,6 @@ a:active {
   display: flex;
   justify-content: center;
   align-content: center;
-
   position: relative;
   box-shadow: 0 30px 100px rgba(0, 0, 0, 40%);
 }
@@ -217,4 +269,82 @@ a:active {
 
 .winner-crown--invisible {
   visibility: hidden;
+}
+
+/* media queries */
+
+/* 768 screen sizes and up */
+@media (min-width: 48em) {
+  footer {
+    font-size: 1.6rem;
+  }
+
+  .header {
+    font-size: 9.6rem;
+  }
+
+  .instructions-btn {
+    padding: 8px;
+    font-size: 2rem;
+  }
+
+  .outer-container {
+    padding: 20px;
+  }
+
+  .player-container-style {
+    padding: 20px 40px 100px 40px;
+  }
+
+  .player-title {
+    font-size: 4.8rem;
+  }
+
+  .player-score--style {
+    font-size: 8rem;
+  }
+
+  .icon {
+    height: 32px;
+    width: 32px;
+  }
+
+  .button {
+    font-size: 1.8rem;
+    padding: 10px 20px;
+    gap: 10px;
+  }
+  .button--restart {
+    top: 40px;
+  }
+
+  .button--roll {
+    bottom: 150px;
+  }
+
+  .button--hold {
+    bottom: 70px;
+  }
+
+  .current-score-box {
+    height: 90px;
+  }
+
+  .current-score-title {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+  }
+
+  .current-score--style {
+    font-size: 3.6rem;
+  }
+
+  .dice {
+    height: 120px;
+    top: 20rem;
+  }
+
+  .winner-crown {
+    font-size: 4.8rem;
+  }
 }
